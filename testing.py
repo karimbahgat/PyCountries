@@ -55,8 +55,9 @@ canvas.geographic_space()
 for country in westafrica:
     print "\t%s" %country
     canvas.draw_geojson(country.__geo_interface__)
-    img = pyagg.load(country.flag).resize(30,15)
-    canvas.paste(img, canvas.coord2pixel(*country.point), anchor="center")
+    #flag = pyagg.load(country.flag).resize(30,15)
+    #canvas.paste(flag, canvas.coord2pixel(*country.point), anchor="center")
+    canvas.draw_text(country.iso3, country.point, anchor="center", textsize="50%", textcolor="blue")
 canvas.view()
 
 print ""
